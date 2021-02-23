@@ -9,3 +9,5 @@
 - log4jdbc.log4j2.properties 필수생성: 역할: 쿼리를 콘솔에서 디버그기능.
 - mappers폴더생성 후 sampleMapper.xml 쿼리파일생성(CRUD쿼리)
 - 쿼리에서 발생되는 반환값을 담을 공간 = VO클래스로 해결.
+
+- JUnit테스트까지.
