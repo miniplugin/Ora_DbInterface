@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.human.service.MemberService;
+import com.human.vo.MemberVO;
 
 /**
  * Handles requests for the application home page.
@@ -25,6 +26,11 @@ public class HomeController {
 	private MemberService memberService;
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
+	@RequestMapping(value="/member_insert",method=RequestMethod.POST)
+	public String member_insert(MemberVO memberVO) throws Exception {
+		memberService.memberInsert(memberVO);
+		return "redirect:/";
+	}
 	/**
 	 * Simply selects the home view to render by returning its name.
 	 * @throws Exception 
