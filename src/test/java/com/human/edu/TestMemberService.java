@@ -27,8 +27,11 @@ public class TestMemberService {
 	public void memberDelete() throws Exception {
 		List<MemberVO> memberList = memberService.memberSelect();
 		System.out.println("디버그 top1구하기"+memberList.get(0).getUserid());
-		//if(memberList.size())
-		memberService.memberDelete(memberList.get(0).getUserid());
+		if(memberList.size()>1) {
+			memberService.memberDelete(memberList.get(0).getUserid());
+		}else {
+			System.out.println("삭제할 사용자가 1명일때 까지 삭제됩니다.");
+		}
 	}
 	@Test
 	public void memberUpdate() throws Exception {
