@@ -4,6 +4,10 @@
 김범주, 김수연, 이용오, 신숙정, 김기명, 이찬홍, 이규혁, 정도영, 남가인, 이희탁, 이시은, 임송하, 정동규,
 
 #### 20210225(목) 작업예정
+- 수업전: JUnit인서트부분 아래내용 추가필요(날짜수정가능하게 쿼리를 변경했기 때문에)
+- Date nowDate = new Date();
+- memberVO.setRegdate(nowDate);
+- memberVO.setUpdatedate(nowDate);
 - egov(Mysql) 마무리.
 - 구름IDE C언어 구구단 설명예정.
 
