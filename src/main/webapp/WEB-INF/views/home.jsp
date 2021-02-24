@@ -12,7 +12,10 @@
 	}
 	tr,th,td {border:1px solid black;}
 	div {text-align:center;}
+	input {width:80px;}
 	</style>
+	<script src="http://code.jquery.com/jquery-latest.min.js">
+	</script>
 </head>
 <body>
 <h1>
@@ -22,7 +25,7 @@
 <P>  The time on the server is ${serverTime}. </P>
 <div>
 <h3>회원등록</h3>
-<form action="/memberInsert">
+<form name="form_insert" action="/member_insert">
 <div>
 <label>아이디</label>
 <input name="userid" type="text" required />
@@ -46,19 +49,31 @@
 <th>수정일</th>
 <th>수정/삭제</th>
 </tr>
+<form name="form_action" action="/member_update">
 <tr>
-<td>user2</td>
-<td>1234</td>
-<td>아무개</td>
-<td>abc@abc.com</td>
-<td>2021.02.24</td>
-<td>2021.02.24</td>
+<td><input name="userid" value="user2"></td>
+<td><input name="userpw" value="1234"></td>
+<td><input name="username" value="아무개"></td>
+<td><input name="email" value="abc@abc.com"></td>
+<td><input name="regdate" value="2021.02.24" readonly></td>
+<td><input name="updatedate" value="2021.02.24" readonly></td>
 <td>
-<button type="button">수정</button>
-<button type="button">삭제</button>
+<button class="btn_update" type="button">수정</button>
+<button class="btn_delete" type="button">삭제</button>
 </td>
 </tr>
+</form>
 </table>
 </div>
+<script>
+$(document).ready(function(){
+	$(".btn_update").on("click",function() {
+		alert("수정버튼클릭");
+	});
+	$(".btn_delete").on("click",function() {
+		alert("삭제버튼클릭");
+	});
+});
+</script>
 </body>
 </html>
