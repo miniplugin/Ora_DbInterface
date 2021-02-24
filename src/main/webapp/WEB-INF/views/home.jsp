@@ -57,7 +57,7 @@
 <td><input name="userpw" value="${memberVO.userpw}"></td>
 <td><input name="username" value="${memberVO.username}"></td>
 <td><input name="email" value="${memberVO.email}"></td>
-<td><input name="regdate" value='<fmt:formatDate pattern="yyyy-MM-dd hh:MM:ss" value="${memberVO.regdate}" />' readonly></td>
+<td><input name="regdate" value='<fmt:formatDate pattern="yyyy-MM-dd hh:MM:ss" value="${memberVO.regdate}" />'></td>
 <td><input name="updatedate" value="${memberVO.updatedate}" disabled></td>
 <td>
 <button class="btn_update" type="button">수정</button>
@@ -79,7 +79,7 @@ $(document).ready(function(){
 	$(".btn_delete").on("click",function() {
 		//alert("삭제버튼클릭");
 		if(confirm("정말로 삭제하시겠습니까?")) {
-			var click_element = $(this).parents("form[name='form_action']");
+			var click_element = $(this).parent().parent().find("form[name='form_action']");
 			click_element.attr("action","<c:url value='/' />member_delete");
 			click_element.submit();
 		}
