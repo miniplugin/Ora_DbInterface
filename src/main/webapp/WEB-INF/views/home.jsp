@@ -18,7 +18,9 @@
 	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-	<script src="./jquery-ui-1.12.1/datepicker-ko.js"></script>
+	<!-- 아래내용은 필요없음 : 참고용으로 보세요 
+	<script src="https://github.com/jquery/jquery-ui/blob/main/ui/i18n/datepicker-ko.js"></script>
+	-->
 </head>
 <body>
 <h1>
