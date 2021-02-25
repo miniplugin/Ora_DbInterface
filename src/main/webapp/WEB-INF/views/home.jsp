@@ -92,6 +92,9 @@ $(document).ready(function(){
 	});//j쿼리달력작동시작
 	$(".date2").datepicker({
 		dateFormat:"yy-mm-dd"
+		,showOn:"both"
+		,buttonImage:"http://jqueryui.com/resources/demos/datepicker/images/calendar.gif" //버튼 이미지 경로
+		,buttonImageOnly:true
 	});
 	$(".btn_update").on("click",function() {
 		//alert("수정버튼클릭");
