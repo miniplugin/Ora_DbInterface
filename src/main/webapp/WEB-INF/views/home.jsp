@@ -15,8 +15,10 @@
 	div {text-align:center;}
 	input {width:80px;}
 	</style>
-	<script src="http://code.jquery.com/jquery-latest.min.js">
-	</script>
+	<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+	<script src="./jquery-ui-1.12.1/datepicker-ko.js"></script>
 </head>
 <body>
 <h1>
@@ -57,8 +59,8 @@
 <td><input name="userpw" value="${memberVO.userpw}"></td>
 <td><input name="username" value="${memberVO.username}"></td>
 <td><input name="email" value="${memberVO.email}"></td>
-<td><input name="regdate" value='<fmt:formatDate pattern="yyyy-MM-dd hh:MM:ss" value="${memberVO.regdate}" />'></td>
-<td><input name="updatedate" value='<fmt:formatDate pattern="yyyy-MM-dd hh:MM:ss" value="${memberVO.updatedate}" />'></td>
+<td><input class="date1" name="regdate" value='<fmt:formatDate pattern="yyyy-MM-dd hh:MM:ss" value="${memberVO.regdate}" />'></td>
+<td><input class="date2" name="updatedate" value='<fmt:formatDate pattern="yyyy-MM-dd hh:MM:ss" value="${memberVO.updatedate}" />'></td>
 <td>
 <button class="btn_update" type="button">수정</button>
 <button class="btn_delete" type="button">삭제</button>
@@ -70,6 +72,8 @@
 </div>
 <script>
 $(document).ready(function(){
+	$(".date1").datepicker();//j쿼리달력작동시작
+	$(".date2").datepicker();
 	$(".btn_update").on("click",function() {
 		//alert("수정버튼클릭");
 		var click_element = $(this).parent().parent().find("form[name='form_action']");
